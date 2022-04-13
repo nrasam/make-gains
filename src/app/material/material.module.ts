@@ -7,6 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
+import { MatButtonModule } from '@angular/material/button';
 
 const MaterialComponents =[
   MatDividerModule,
@@ -14,7 +15,8 @@ const MaterialComponents =[
   MatTableModule,
   MatFormFieldModule,
   MatInputModule,
-  MatIconModule
+  MatIconModule,
+  MatButtonModule
 ];
 
 @NgModule({
