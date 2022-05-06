@@ -1,0 +1,8 @@
+.header {
+    border: 1px #ccc solid;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    /* Font size affects size of matInput */
+    font-size: medium;
+}

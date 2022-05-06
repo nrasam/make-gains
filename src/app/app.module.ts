@@ -11,13 +11,17 @@ import { NutritionComponent } from './components/nutrition/nutrition.component';
 import { FoodComponent } from './components/food/food.component';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FoodItemComponent } from './components/food-item/food-item.component';
+import { FoodItemHeaderComponent } from './components/food-item-header/food-item-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     NutritionComponent,
-    FoodComponent
+    FoodComponent,
+    FoodItemComponent,
+    FoodItemHeaderComponent
   ],
   imports: [
     BrowserModule,

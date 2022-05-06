@@ -12,4 +12,8 @@ export class FoodService {
   getFood(): Food[] {
     return FOODS;
   }
+
+  updateFood(name: string): void {
+    //TODO
+  }
 }

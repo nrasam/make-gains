@@ -19,9 +19,9 @@ export class NutrientService {
         return nutrient.name === foodNutrient.name;
       });
       if (idx) {
-        console.log('nutrient pre-update', NUTRIENTS[idx]);
+        //console.log('nutrient pre-update', NUTRIENTS[idx]);
         NUTRIENTS[idx].dv += foodNutrient.dv;
-        console.log('nutrient updated', NUTRIENTS[idx]);
+        //console.log('nutrient updated', NUTRIENTS[idx]);
       }
     });
     console.log('food', food);

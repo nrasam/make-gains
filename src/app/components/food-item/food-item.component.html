@@ -1,0 +1,13 @@
+<div class="food-item">
+    <div class="name">
+        {{name}}
+    </div>
+    <div class="cal">{{newCal}}</div>
+    <div class="serving">
+        <mat-form-field appearance="outline" floatLabel="never">
+            <input matInput [(ngModel)]="newServing" id="serving" name="serving" type="number" (change)="updateCal()" min="0">
+        </mat-form-field>
+        {{per}}
+    </div>
+    <div class="add"><button matInput (click)="onClick()">ADD</button></div>
+</div>
