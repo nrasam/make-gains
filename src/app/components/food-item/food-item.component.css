@@ -1,5 +1,5 @@
 .food-item {
-    border: 1px #ccc solid;
+    border: 1px rgb(120, 44, 192) solid;
     display: flex;
     align-items: center;
     justify-content: space-evenly;

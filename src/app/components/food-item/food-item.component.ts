@@ -1,3 +1,4 @@
+import { NutrientService } from 'src/app/services/nutrient.service';
 import { Nutrient } from 'src/app/Nutrient';
 import { Component, OnInit, Input } from '@angular/core';
 import { Food } from 'src/app/Food';
@@ -18,7 +19,7 @@ export class FoodItemComponent implements OnInit {
   newServing: number = 0;
   newCal: number = 0;
 
-  constructor(private foodService: FoodService) {}
+  constructor(private foodService: FoodService, private nutrientService: NutrientService) {}
 
   ngOnInit(): void {
     this.name = this.food.name;
@@ -38,6 +39,9 @@ export class FoodItemComponent implements OnInit {
   }
 
   onClick(): void {
-    
+    let amount = this.newServing / this.serving;
+    for (let i = 0; i < amount; i++){
+      this.nutrientService.addToNutrients(this.food);
+    }
   }
 }
