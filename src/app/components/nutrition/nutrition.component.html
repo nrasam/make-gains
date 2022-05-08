@@ -3,7 +3,7 @@
   <h3>{{today}}</h3>
   <mat-divider></mat-divider>
   <h2>
-    Calories #
+    Calories: {{totalCal}}
     <mat-divider></mat-divider>
     <mat-divider></mat-divider>
   </h2>
@@ -19,19 +19,39 @@
   <!-- dv Column -->
   <ng-container matColumnDef="dv">
     <th mat-header-cell *matHeaderCellDef> DV </th>
-    <td mat-cell *matCellDef="let element"> {{element.dv}} </td>
+    <td mat-cell *matCellDef="let element">
+      <div [ngStyle]="{'color': 'rgb(7, 163, 7)'}">{{element.dv}}{{element.suffix}}</div>
+    </td>
   </ng-container>
 
   <!-- intake Column -->
   <ng-container matColumnDef="intake">
     <th mat-header-cell *matHeaderCellDef> Intake </th>
-    <td mat-cell *matCellDef="let element"> {{element.intake}} </td>
+    <td mat-cell *matCellDef="let element">
+      <div class="default" *ngIf="element.dv == 0">{{element.intake}}{{element.suffix}}</div>
+      <div class="zeroIntake" *ngIf="(element.dv > 0) && (element.intake == 0)">
+        {{element.intake}}{{element.suffix}}
+      </div>
+      <div class="underDV" *ngIf="(element.dv > 0) && element.intake && (element.intake < element.dv)">
+        {{element.intake}}{{element.suffix}}
+      </div>
+      <div class="atOrOverDV" *ngIf="(element.dv > 0) && (element.intake >= element.dv)">
+        {{element.intake}}{{element.suffix}}
+      </div>
+    </td>
   </ng-container>
 
   <!-- limit Column -->
   <ng-container matColumnDef="limit">
     <th mat-header-cell *matHeaderCellDef> Upper Limit </th>
-    <td mat-cell *matCellDef="let element"> {{element.limit}} </td>
+    <td mat-cell *matCellDef="let element">
+      <div *ngIf="element.limit != 0 else none">
+        {{element.limit}} {{element.suffix}}
+      </div>
+      <ng-template #none>
+        N/A
+      </ng-template>
+    </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

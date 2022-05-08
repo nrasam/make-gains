@@ -43,5 +43,6 @@ export class FoodItemComponent implements OnInit {
     for (let i = 0; i < amount; i++){
       this.nutrientService.addToNutrients(this.food);
     }
+    this.nutrientService.addToCalories(this.newCal);
   }
 }

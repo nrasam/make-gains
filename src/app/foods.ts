@@ -5,7 +5,7 @@ export const FOODS: Food[] = [
     name: 'Protein Powder',
     cal: 160,
     nutrients: [
-      { name: 'Protein', dv: 25 }
+      { name: 'Protein', intake: 25 }
     ],
     serving: 1,
     per: 'scoop',
@@ -14,7 +14,7 @@ export const FOODS: Food[] = [
     name: 'Nutritional Yeast',
     cal: 80,
     nutrients: [
-      { name: 'Carbohydrates', dv: 100}
+      { name: 'Carbohydrates', intake: 100}
     ],
     serving: 1 / 4,
     per: 'cup',

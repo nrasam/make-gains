@@ -1,6 +1,30 @@
-mat-grid-tile {
-  background: lightblue;
-}
 table {
   width: 100%;
+}
+
+th {
+  font-weight: 500;
+  color: black;
+}
+
+td, th {
+  font-size: large;
+}
+
+.default {
+  color: rgb(48, 48, 199);
+}
+
+.zeroIntake {
+  color: red;
+}
+
+.underDV{
+  color: orange;
+  font-weight:500;
+}
+
+.atOrOverDV {
+  color: rgb(7, 163, 7);
+  font-weight: bold;
 }
