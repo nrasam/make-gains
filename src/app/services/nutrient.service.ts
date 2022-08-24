@@ -16,14 +16,15 @@ export class NutrientService {
     return NUTRIENTS;
   }
 
-  addToNutrients(food: Food) {
+  addToNutrients(food: Food, amount: number) {
     food.nutrients.forEach((foodNutrient) => {
       var idx = NUTRIENTS.findIndex((nutrient) => {
         return nutrient.name === foodNutrient.name;
       });
-      if (idx) {
+      // BUGFIX: 0 is valid
+      if (idx != -1) {
         //console.log('nutrient pre-update', NUTRIENTS[idx]);
-        NUTRIENTS[idx].intake += foodNutrient.intake;
+        NUTRIENTS[idx].intake += foodNutrient.intake * amount;
         //console.log('nutrient updated', NUTRIENTS[idx]);
       }
     });

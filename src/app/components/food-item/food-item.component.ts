@@ -19,7 +19,10 @@ export class FoodItemComponent implements OnInit {
   newServing: number = 0;
   newCal: number = 0;
 
-  constructor(private foodService: FoodService, private nutrientService: NutrientService) {}
+  constructor(
+    private foodService: FoodService,
+    private nutrientService: NutrientService
+  ) {}
 
   ngOnInit(): void {
     this.name = this.food.name;
@@ -40,9 +43,10 @@ export class FoodItemComponent implements OnInit {
 
   onClick(): void {
     let amount = this.newServing / this.serving;
-    for (let i = 0; i < amount; i++){
+    /*     for (let i = 0; i < amount; i++){
       this.nutrientService.addToNutrients(this.food);
-    }
+    } */
+    this.nutrientService.addToNutrients(this.food, amount);
     this.nutrientService.addToCalories(this.newCal);
   }
 }
